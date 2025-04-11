@@ -1,6 +1,7 @@
 import React from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
-import PageHeaderContent from "../../component/PageHeaderContent";
+import PageHeaderContent from '../../component/PageHeaderContent';
+
 import { Animate } from "react-simple-animate";
 import {
   SiPython,
