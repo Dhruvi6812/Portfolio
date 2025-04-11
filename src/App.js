@@ -6,7 +6,6 @@ import { loadFull } from 'tsparticles';
 import Home from './containers/Home';
 import About from './containers/About';
 import Skills from './containers/Skills';
-import Resume from './containers/Resume';
 import ProtFolio from './containers/PortFolio'
 import Contact from './containers/Contact';
 import Navbar from './component/navBar';
@@ -36,7 +35,6 @@ function App() {
       <Route  index path="/" element={<Home />} />
       <Route path="/about" element={<About />}/>
       <Route path="/skills" element={<Skills />}/>
-      <Route path="/resume" element={<Resume />}/>
       <Route path="/protfolio" element={<ProtFolio />}/>
       <Route path="/contact" element={<Contact />}/>
      </Routes>

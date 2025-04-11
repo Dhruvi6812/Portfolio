@@ -18,11 +18,7 @@ const data =[
         to : '/skills'
     },
     {
-        label :'RESUME',
-        to : '/resume'
-    },
-    {
-        label :'PORTFOLIO',
+        label :'PROJECTS',
         to : '/protfolio'
     },
     {
