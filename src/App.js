@@ -1,7 +1,9 @@
 import './App.scss';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Particles from "@tsparticles/react";
-import { loadFull } from "@tsparticles/engine";
+import Particles from '@tsparticles/react';
+import { loadFull } from 'tsparticles';
+import particles from './utils.js/particles';
+
 
 import Home from './containers/Home';
 import About from './containers/About';
@@ -9,31 +11,27 @@ import Skills from './containers/Skills';
 import ProtFolio from './containers/PortFolio';
 import Contact from './containers/Contact';
 import Navbar from './component/navBar';
-import particles from './utils.js/particles'; // ✅ your custom particle config
+
 
 function App() {
   const location = useLocation();
-  console.log(location);
-
-  // Init for tsparticles v3 engine
   const handleInit = async (engine) => {
     await loadFull(engine);
   };
-
 
   const renderParticleJsInHomePage = location.pathname === "/";
 
   return (
     <div className="App">
-      {/* Background particles only on home page */}
+      {/* ✅ Particle background only on homepage */}
       {renderParticleJsInHomePage && (
-        <Particles id="particles" options={particles} init={handleInit} />
+        <Particles id="tsparticles" options={particles} init={handleInit} />
       )}
 
       {/* Navigation bar */}
       <Navbar />
 
-      {/* Page content based on route */}
+      {/* Page content */}
       <div className="App__main-page-content">
         <Routes>
           <Route index path="/" element={<Home />} />
@@ -46,5 +44,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

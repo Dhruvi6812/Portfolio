@@ -8,11 +8,11 @@ import {
   SiHtml5,
   SiCss3,
   SiJavascript,
-  SiVisualstudiocode,
   SiMysql,
   SiReact,
   SiExpress,
 } from "react-icons/si";
+
 import "./styles.scss";
 
 const jobSummary = `
@@ -67,8 +67,7 @@ const About = () => {
               <div className="icon-wrapper icon-4"><SiReact /></div>
               <div className="icon-wrapper icon-5"><SiExpress /></div>
               <div className="icon-wrapper icon-6"><SiMysql /></div>
-              <div className="icon-wrapper icon-7"><SiVisualstudiocode /></div>
-              <div className="icon-wrapper icon-8"><SiPython /></div>
+              <div className="icon-wrapper icon-7"><SiPython /></div>
             </div>
           </Animate>
         </div>

@@ -1,90 +1,100 @@
 .home {
-    position: relative;
-    /* Instead of a fixed height, consider min-height so content can expand if needed */
-    min-height: 100vh; 
+  position: relative;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; // Responsive stacking on smaller screens
+    gap: 50px;
+  }
+
+  &__image-wrapper {
+    flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center; /* This centers content vertically */
+    align-items: center;
+
+    .home__image {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid lightgray;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__text-wrapper {
+    flex: 2;
+    max-width: 800px;
+    text-align: left;
+
+    h1 {
+      color: lightgrey;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: lightgrey;
+      font-size: 16px;
+      line-height: 1.8rem;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__contact_btn {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+
+    button {
+      cursor: pointer;
+      padding: 10px 65px;
+      font-size: 1.5rem;
+      background: transparent;
+      color: lightgray;
+      border: 1.5px solid #fff;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+}
+
+/* Media Queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .home__content {
     flex-direction: column;
-    padding: 40px; /* Some padding to keep text away from the edges */
-  
-    &__text-wrapper {
-      /* Limit how wide the text can get */
-      max-width: 800px;
-      margin: 9px;
-      text-align: left; /* Center the text horizontally */
-  
-      h1 {
-        /* Change text color to white */
-        color: lightgrey;
-        margin: 0;
-        font-weight: 20px;
-        font-size: 19px;
-        line-height: 3rem;
-        
-        /* Remove or change these if you want normal text wrapping
-           and no typing animation effect */
-        position: relative;
-        overflow: visible;        /* let text wrap normally */
-        white-space: normal;      /* allow normal line wrapping */
-        /* animation: typing 2.5s steps(30, end); // remove if not needed */
-        /* width: 70%; // remove if not needed */
-      }
-    }
-  
-    &__contact_btn {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-  
-      button {
-        cursor: pointer;
-        padding: 10px 65px;
-        font-size: 2rem;
-        background: transparent;
-        /* If you also want the button’s text and border to be white */
-        color: lightgray;
-        border: 1.5px solid #fff;
-        border-radius: 5px;
-        font-weight: 500;
-  
-        &:hover {
-          background-color: #fff;
-          color: #000;
-        }
-      }
-    }
+    align-items: center;
   }
-  
-  /* Keep or adjust the media queries for responsive text scaling */
-  @media only screen and (max-width: 550px) {
-    .home__text-wrapper h1 {
-      font-size: 3rem;
-      line-height: 4rem;
-    }
+
+  .home__image-wrapper .home__image {
+    width: 220px;
+    height: 220px;
   }
-  
-  @media only screen and (min-width: 551px) and (max-width: 768px) {
-    .home__text-wrapper h1 {
-      font-size: 4rem;
-      line-height: 5rem;
-    }
+
+  .home__text-wrapper h1 {
+    font-size: 18px;
+    line-height: 2rem;
   }
-  
-  @media only screen and (min-width: 769px) and (max-width: 990px) {
-    .home__text-wrapper h1 {
-      font-size: 5rem;
-      line-height: 6rem;
-    }
-  }
-  
-  /* Remove if you don’t need the typing animation */
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 70%;
-    }
-  }
-  
+}
