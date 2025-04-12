@@ -10,7 +10,7 @@ const ParticlesContainer = () => {
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
+      init={handleInit}
       options={{
         background: {
           color: {

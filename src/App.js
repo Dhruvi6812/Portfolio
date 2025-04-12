@@ -1,7 +1,7 @@
 import './App.scss';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Particles from '@tsparticles/react'; // ✅ updated to v3 package
-import { loadFull } from '@tsparticles/engine'; // ✅ engine loader for tsparticles v3
+import Particles from "@tsparticles/react";
+import { loadFull } from "@tsparticles/engine";
 
 import Home from './containers/Home';
 import About from './containers/About';
@@ -19,6 +19,7 @@ function App() {
   const handleInit = async (engine) => {
     await loadFull(engine);
   };
+
 
   const renderParticleJsInHomePage = location.pathname === "/";
 
