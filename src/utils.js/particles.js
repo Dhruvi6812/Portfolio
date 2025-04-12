@@ -1,73 +1,90 @@
-export default{
-    background: {
-        color: {
+import React, { useCallback } from "react";
+import Particles from "@tsparticles/react";
+import { loadFull } from "@tsparticles/engine";
+
+const ParticlesContainer = () => {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        background: {
+          color: {
             value: "#1d1d1d",
+          },
         },
-    },
-    fpsLimit: 120,
-    interactivity: {
-        events: {
+        fpsLimit: 120,
+        interactivity: {
+          events: {
             onClick: {
-                enable: true,
-                mode: "push",
+              enable: true,
+              mode: "push",
             },
             onHover: {
-                enable: true,
-                mode: "repulse",
+              enable: true,
+              mode: "repulse",
             },
             resize: true,
-        },
-        modes: {
+          },
+          modes: {
             push: {
-                quantity: 4,
+              quantity: 4,
             },
             repulse: {
-                distance: 200,
-                duration: 0.4,
+              distance: 200,
+              duration: 0.4,
             },
+          },
         },
-    },
-    particles: {
-        color: {
+        particles: {
+          color: {
             value: "#ffffff",
-        },
-        links: {
+          },
+          links: {
             color: "#ffffff",
             distance: 150,
             enable: true,
             opacity: 0.5,
             width: 1,
-        },
-        collisions: {
+          },
+          collisions: {
             enable: true,
-        },
-        move: {
+          },
+          move: {
             direction: "none",
             enable: true,
             outModes: {
-                default: "bounce",
+              default: "bounce",
             },
             random: false,
             speed: 6,
             straight: false,
-        },
-        number: {
+          },
+          number: {
             density: {
-                enable: true,
-                area: 800,
+              enable: true,
+              area: 800,
             },
             value: 80,
-        },
-        opacity: {
+          },
+          opacity: {
             value: 0.5,
-        },
-        shape: {
+          },
+          shape: {
             type: "circle",
-        },
-        size: {
+          },
+          size: {
             value: { min: 1, max: 5 },
+          },
         },
-    },
-    detectRetina: true,
-}
+        detectRetina: true,
+      }}
+    />
+  );
+};
 
+export default ParticlesContainer;
