@@ -16,7 +16,7 @@ import {
 import "./styles.scss";
 
 const jobSummary = `
-I’m Dhruvi Patel, a software engineer and current Master’s student in Computer Science at the University of Dayton.
+I’m Dhruvi Patel, a software engineer and a recent Master’s graduate in Computer Science from the University of Dayton.
 My journey in tech started with a fascination for how things work and quickly evolved into a passion for building meaningful,
 user-focused software solutions. With hands-on experience in full-stack development, I’ve worked with technologies like React.js,
 Java Spring Boot, Django, and MongoDB — contributing to real-world projects in e-commerce, agriculture, and beyond.

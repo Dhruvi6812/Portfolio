@@ -26,7 +26,7 @@ const Home = () => {
         <div className="home__text-wrapper">
           <h1>Hello, I'm Dhruvi Patel</h1>
           <p>
-            I’m a passionate Software Engineer and Computer Science graduate student, driven by
+            I’m a passionate Software Engineer and Computer Science graduate , driven by
             curiosity, creativity, and a love for solving real-world problems with clean, efficient
             code.
           </p>
