@@ -8,7 +8,7 @@ import particles from './utils.js/particles';
 import Home from './containers/Home';
 import About from './containers/About';
 import Skills from './containers/Skills';
-import ProtFolio from './containers/PortFolio';
+import Portfolio from './containers/PortFolio';
 import Contact from './containers/Contact';
 import Navbar from './component/navBar';
 
@@ -37,7 +37,7 @@ function App() {
           <Route index path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
-          <Route path="/protfolio" element={<ProtFolio />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>

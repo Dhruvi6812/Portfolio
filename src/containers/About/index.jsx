@@ -1,7 +1,6 @@
 import React from "react";
 import { BsInfoCircleFill } from "react-icons/bs";
-import PageHeaderContent from '../../component/PageHeaderContent';
-
+import PageHeaderContent from "../../component/PageHeaderContent";
 import { Animate } from "react-simple-animate";
 import {
   SiPython,
@@ -15,20 +14,6 @@ import {
 
 import "./styles.scss";
 
-const jobSummary = `
-I’m Dhruvi Patel, a software engineer and a recent Master’s graduate in Computer Science from the University of Dayton.
-My journey in tech started with a fascination for how things work and quickly evolved into a passion for building meaningful,
-user-focused software solutions. With hands-on experience in full-stack development, I’ve worked with technologies like React.js,
-Java Spring Boot, Django, and MongoDB — contributing to real-world projects in e-commerce, agriculture, and beyond.
-
-Recently, I’ve been diving deeper into the world of cybersecurity, combining my love for problem-solving with technical curiosity
-to explore areas like threat detection, penetration testing, and ethical hacking.
-
-Outside of coding, I’m someone who believes in growing. I love trying out new healthy recipes and exploring
-creative ways to stay active and energized. Whether it's learning a new framework or crafting something in the kitchen,
-I’m always up for a challenge that helps me grow.
-`;
-
 const About = () => {
   return (
     <section id="about" className="about">
@@ -38,27 +23,58 @@ const About = () => {
       />
 
       <div className="about__content">
-        {/* Left side - summary text */}
+        
+        {/* LEFT SIDE */}
         <div className="about__content__personalwrapper">
           <Animate
             play
-            duration={1.5}
-            delay={1}
-            start={{ transform: "translateX(-900px)" }}
-            end={{ transform: "translateX(0px)" }}
+            duration={1.2}
+            delay={0.5}
+            start={{ transform: "translateX(-200px)", opacity: 0 }}
+            end={{ transform: "translateX(0px)", opacity: 1 }}
           >
-            <p>{jobSummary}</p>
+            
+            {/* Intro */}
+            <p className="about__intro">
+              I’m <strong>Dhruvi Patel</strong>, a Full Stack Developer with 3+ years of experience building scalable, high-performance web applications.
+            </p>
+
+            {/* Experience */}
+            <p>
+              Currently working at <strong>Carfax</strong>, where I contribute to modernizing large-scale applications, improving performance, and delivering reliable, data-driven user experiences.
+            </p>
+
+            {/* Skills */}
+            <p>
+              My expertise lies in <strong>React, Next.js, TypeScript, and Node.js</strong>, along with experience in cloud platforms like <strong>AWS and Azure</strong>. I enjoy working across the stack — from building intuitive frontend interfaces to designing efficient backend systems and APIs.
+            </p>
+
+            {/* Projects */}
+            <p>
+              I’ve developed real-time and AI-powered applications, including a cybersecurity platform <strong>ThreatStream</strong>, where I implemented live threat intelligence, secure authentication, and scalable backend architecture.
+            </p>
+
+            {/* Personal */}
+            <p>
+              Outside of work, I enjoy learning new technologies, exploring innovative ideas, and trying out healthy recipes to stay creative and balanced.
+            </p>
+
+            {/* Closing */}
+            <p className="about__closing">
+              I’m always excited to take on challenges that push me to grow and build impactful, real-world solutions.
+            </p>
+
           </Animate>
         </div>
 
-        {/* Right side - rotating tech icons */}
+        {/* RIGHT SIDE (Icons) */}
         <div className="about__content__serviceswrapper">
           <Animate
             play
-            duration={1.5}
-            delay={1}
-            start={{ transform: "translateX(600px)" }}
-            end={{ transform: "translateX(0px)" }}
+            duration={1.2}
+            delay={0.5}
+            start={{ transform: "translateX(200px)", opacity: 0 }}
+            end={{ transform: "translateX(0px)", opacity: 1 }}
           >
             <div className="about__content__serviceswrapper__innerContent">
               <div className="icon-wrapper icon-1"><SiHtml5 /></div>
@@ -71,6 +87,7 @@ const About = () => {
             </div>
           </Animate>
         </div>
+
       </div>
     </section>
   );

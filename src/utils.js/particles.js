@@ -1,75 +1,86 @@
 const particles = {
-    background: {
-      color: {
-        value: "#1d1d1d",
+  background: {
+    color: {
+      value: "#0a192f", // matches your dark theme
+    },
+  },
+  fpsLimit: 60,
+
+  interactivity: {
+    events: {
+      onClick: {
+        enable: true,
+        mode: "push",
+      },
+      onHover: {
+        enable: true,
+        mode: "grab", // smoother than repulse
+      },
+      resize: true,
+    },
+    modes: {
+      push: {
+        quantity: 2,
+      },
+      grab: {
+        distance: 140,
+        links: {
+          opacity: 0.3,
+        },
       },
     },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onClick: {
-          enable: true,
-          mode: "push",
-        },
-        onHover: {
-          enable: true,
-          mode: "repulse",
-        },
-        resize: true,
-      },
-      modes: {
-        push: {
-          quantity: 4,
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.4,
-        },
-      },
+  },
+
+  particles: {
+    color: {
+      value: "#64ffda", // your accent color
     },
-    particles: {
-      color: {
-        value: "#ffffff",
-      },
-      links: {
-        color: "#ffffff",
-        distance: 150,
-        enable: true,
-        opacity: 0.5,
-        width: 1,
-      },
-      collisions: {
-        enable: true,
-      },
-      move: {
-        direction: "none",
-        enable: true,
-        outModes: {
-          default: "bounce",
-        },
-        random: false,
-        speed: 6,
-        straight: false,
-      },
-      number: {
-        density: {
-          enable: true,
-          area: 800,
-        },
-        value: 80,
-      },
-      opacity: {
-        value: 0.5,
-      },
-      shape: {
-        type: "circle",
-      },
-      size: {
-        value: { min: 1, max: 5 },
-      },
+
+    links: {
+      color: "#64ffda",
+      distance: 120,
+      enable: true,
+      opacity: 0.15,
+      width: 1,
     },
-    detectRetina: true,
-  };
-  
-  export default particles;
-  
+
+    collisions: {
+      enable: false, // smoother movement
+    },
+
+    move: {
+      direction: "none",
+      enable: true,
+      outModes: {
+        default: "out",
+      },
+      random: true,
+      speed: 1.2, // MUCH smoother
+      straight: false,
+    },
+
+    number: {
+      density: {
+        enable: true,
+        area: 800,
+      },
+      value: 40, // less clutter
+    },
+
+    opacity: {
+      value: 0.2, // subtle
+    },
+
+    shape: {
+      type: "circle",
+    },
+
+    size: {
+      value: { min: 1, max: 3 },
+    },
+  },
+
+  detectRetina: true,
+};
+
+export default particles;

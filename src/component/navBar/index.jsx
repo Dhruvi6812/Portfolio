@@ -19,7 +19,7 @@ const data =[
     },
     {
         label :'PROJECTS',
-        to : '/protfolio'
+        to : '/portfolio'
     },
     {
         label :'CONTACT',

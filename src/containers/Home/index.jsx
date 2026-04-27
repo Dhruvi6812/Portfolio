@@ -13,48 +13,67 @@ const Home = () => {
   return (
     <section id="home" className="home">
       <div className="home__content">
-        {/* Profile Image Section */}
+        
+        {/* Profile Image */}
         <div className="home__image-wrapper">
           <img
-            src="/images/profile.jpg" // <- Replace with your actual image path
+            src="/images/profile.jpg"
             alt="Dhruvi Patel"
             className="home__image"
           />
         </div>
 
-        {/* Text Intro Section */}
+        {/* Text Section */}
         <div className="home__text-wrapper">
-          <h1>Hello, I'm Dhruvi Patel</h1>
-          <p>
-            I’m a passionate Software Engineer and Computer Science graduate , driven by
-            curiosity, creativity, and a love for solving real-world problems with clean, efficient
-            code.
-          </p>
-          <p>
-            With a solid foundation in full-stack development and growing expertise in cybersecurity,
-            I specialize in building robust web applications using technologies like ReactJS,
-            Java Spring Boot, Django, and MongoDB.
-          </p>
-          <p>
-            My journey includes hands-on experience through academic projects, professional
-            internships, and coursework that bridges software engineering with cyber defense
-            strategies.
-          </p>
-          <p>
-            Whether it’s developing scalable solutions or securing digital systems, I’m always eager
-            to learn, adapt, and contribute meaningfully to forward-thinking teams.
-          </p>
-          <p>Let’s build something amazing together. 🚀</p>
+          
+          {/* Main Heading */}
+          <h1>
+            Hi, I’m <span>Dhruvi Patel</span>
+          </h1>
 
+          {/* Subheading */}
+          <h2>
+            Full Stack Developer | React • Next.js • TypeScript • Node.js
+          </h2>
+
+          {/* Short Intro (clean + impactful) */}
+          <p className="home__description">
+            Full Stack Developer with 3+ years of experience building scalable,
+            high-performance web applications. Currently working at{" "}
+            <strong>Carfax</strong>, where I contribute to modernizing large-scale
+            systems, improving performance, and delivering data-driven user experiences.
+          </p>
+
+          {/* Value Proposition */}
+          <p className="home__description">
+            I specialize in developing clean, efficient solutions across the stack —
+            from intuitive frontend interfaces to robust backend APIs and cloud integrations.
+          </p>
+
+          {/* Highlight Line */}
+          <p className="home__highlight">
+            Recently focused on real-time systems, AI-powered applications, and cybersecurity projects like <strong>ThreatStream</strong>.
+          </p>
+
+          {/* CTA Buttons */}
           <Animate
             play={true}
-            duration={1.5}
-            delay={1}
-            start={{ transform: "translateY(550px)" }}
-            end={{ transform: "translateX(0px)" }}
+            duration={1.2}
+            delay={0.8}
+            start={{ transform: "translateY(100px)", opacity: 0 }}
+            end={{ transform: "translateY(0px)", opacity: 1 }}
           >
-            <div className="home__contact_btn">
-              <button onClick={handleNavigateToContactMePage}>Hire me</button>
+            <div className="home__cta">
+              <button onClick={handleNavigateToContactMePage}>
+                Hire Me
+              </button>
+
+              <button
+                className="secondary"
+                onClick={() => navigate("/portfolio")}
+              >
+                View Projects
+              </button>
             </div>
           </Animate>
         </div>

@@ -3,75 +3,64 @@ import "./styles.scss";
 
 const portfolioData = [
   {
-    title: "Mobile-Enabled Agricultural Software Solution",
-    date: "May 2024 – July 2024",
-    institute: "University of Dayton, Ohio",
-    techStack: ["Python", "Django", "PostgreSQL", "AWS", "Docker", "HTML", "CSS"],
-    image: "/images/project1.jpg",
+    title: "ThreatStream – Real-Time Threat Intelligence Platform",
+    date: "2025",
+    techStack: ["Next.js", "FastAPI", "PostgreSQL", "Prisma", "Docker", "JWT"],
+    image: "/images/threatstream-dashboard.png",
+    github: "https://github.com/Dhruvi6812/ThreatStream.git",
+    live: "https://threat-stream-five.vercel.app/login",
     bullets: [
-      "Built a scalable platform connecting farmers and buyers via mobile phones.",
-      "Handled backend development to support secure, seamless transactions.",
-      "Implemented features like order tracking, contract management, and inventory tools."
+      "Built a full-stack cybersecurity platform for real-time threat intelligence.",
+      "Integrated AbuseIPDB API to fetch and process live malicious IP data.",
+      "Implemented JWT authentication with secure httpOnly cookies.",
+      "Designed PostgreSQL schema using Prisma ORM with relational models.",
+      "Handled API rate limiting (429 errors) with fallback strategies.",
+      "Developed responsive dashboard with severity classification (NEW / RECENT / STALE)."
     ]
   },
   {
-    title: "E-commerce Web Application",
-    date: "Jan 2024 – Apr 2024",
-    institute: "University of Dayton, Ohio",
-    techStack: ["ReactJS", "Java Spring Boot", "MongoDB"],
+    title: "Full-Stack Web Application Suite",
+    date: "2024",
+    techStack: ["React.js", "Node.js", "Spring Boot", "MongoDB"],
     image: "/images/project2.jpg",
     bullets: [
-      "Developed a dynamic shopping platform with catalog, cart, and checkout systems.",
-      "Implemented 10+ key use cases including authentication, order management.",
-      "Managed technical documentation to support development and future scaling."
+      "Developed scalable applications with cart, checkout, and real-time features.",
+      "Designed REST APIs and optimized database queries for performance.",
+      "Built responsive UI improving usability and engagement."
     ]
   },
   {
-    title: "Emotion-Based Music Recommendation System",
-    date: "Apr 2023",
-    institute: "LDRP Institute of Technology and Research",
-    techStack: ["OpenCV", "Python", "SVM", "Haar Cascade"],
+    title: "Mobile Agricultural Platform",
+    date: "2024",
+    techStack: ["Python", "Django", "PostgreSQL", "AWS", "Docker"],
+    image: "/images/project1.jpg",
+    github: "https://github.com/Dhruvi6812/Procure-produce-sales-management.git",
+    bullets: [
+      "Built a platform connecting farmers and buyers with transparent transactions.",
+      "Implemented backend systems for order tracking and contract management.",
+      "Enabled scalable cloud-based deployment using AWS."
+    ]
+  },
+  {
+    title: "AI-Powered Smart Applications",
+    date: "2023",
+    techStack: ["Python", "OpenCV", "PyTorch", "Django"],
     image: "/images/project3.jpg",
     bullets: [
-      "Designed an intelligent music player that detects emotions via facial expressions.",
-      "Used machine learning to recommend playlists based on user mood in real-time."
+      "Built AI-based applications including emotion detection and healthcare systems.",
+      "Implemented ML models for facial recognition and medical predictions.",
+      "Developed data pipelines and user-friendly interfaces."
     ]
   },
   {
-    title: "E-Society Application",
-    date: "Nov 2022",
-    institute: "LDRP Institute of Technology and Research",
-    techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-    image: "/images/project4.jpg",
-    bullets: [
-      "Created a digital platform for residential communities to streamline operations.",
-      "Integrated alerts, maintenance logs, issue reporting, and resident messaging.",
-      "Implemented role-based access control for admin and emergency communication."
-    ]
-  },
-  {
-    title: "E-Health Care Management System",
-    date: "Apr 2022",
-    institute: "LDRP Institute of Technology and Research",
-    techStack: ["Python", "Tkinter", "Machine Learning"],
-    image: "/images/project5.jpg",
-    bullets: [
-      "Developed an AI-based desktop app for disease diagnosis using X-ray images.",
-      "Enabled uploads and automated predictions for doctors and patients.",
-      "Enhanced clinical decision-making with efficient, AI-driven feedback."
-    ]
-  },
-  {
-    title: "CyberScope – Cybersecurity Project",
-    date: "Jan 2025 – May 2025",
-    institute: "University of Dayton, Ohio",
-    techStack: ["Shodan", "Maltego", "GoPhish", "Ettercap", "SQLMap", "Cuckoo Sandbox", "PyTorch", "Hugging Face"],
+    title: "CyberScope – Cybersecurity Analysis",
+    date: "2025",
+    techStack: ["Shodan", "Maltego", "SQLMap", "Ettercap", "Cuckoo Sandbox"],
     image: "/images/project6.jpg",
     bullets: [
-      "Executed OSINT investigations using tools like Shodan and Maltego.",
-      "Simulated phishing and MITM attacks using GoPhish and Ettercap.",
-      "Analyzed malware behavior using dynamic and static methods.",
-      "Built machine learning models for threat detection and mitigation strategies."
+      "Performed OSINT investigations and vulnerability analysis.",
+      "Simulated phishing and MITM attacks in controlled environments.",
+      "Analyzed malware behavior using dynamic and static techniques."
     ]
   }
 ];
@@ -79,30 +68,53 @@ const portfolioData = [
 const PortFolio = () => {
   return (
     <section id="portfolio" className="portfolio">
-      <h2 className="portfolio__title">My Projects</h2>
+      <h2 className="portfolio__title">Projects</h2>
+
       <div className="portfolio__grid">
         {portfolioData.map((project, index) => (
           <div className="portfolio__card" key={index}>
             <div className="portfolio__card-inner">
+
+              {/* FRONT */}
               <div className="portfolio__card-front">
-                <img src={project.image} alt={project.title} className="portfolio__image" />
+                <img src={project.image} alt={project.title} />
                 <h3>{project.title}</h3>
               </div>
+
+              {/* BACK */}
               <div className="portfolio__card-back">
                 <h3>{project.title}</h3>
                 <p className="portfolio__date">{project.date}</p>
-                <p className="portfolio__institute">{project.institute}</p>
+
                 <ul>
                   {project.bullets.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
                 </ul>
+
+                {/* TECH STACK */}
                 <div className="portfolio__tech-stack">
                   {project.techStack.map((tech, i) => (
-                    <span className="portfolio__tag" key={i}>{tech}</span>
+                    <span key={i}>{tech}</span>
                   ))}
                 </div>
+
+                {/* LINKS */}
+                <div className="portfolio__links">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      GitHub
+                    </a>
+                  )}
+
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer">
+                      Live
+                    </a>
+                  )}
+                </div>
               </div>
+
             </div>
           </div>
         ))}
